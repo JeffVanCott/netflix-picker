@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What Show Should We Watch Next?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-badge-row">
+          <p class="eyebrow">Netflix TV Picker</p>
+          <span class="hero-chip">10 quick taps</span>
+        </div>
+        <h1>What show should we watch next?</h1>
+        <p class="intro">
+          No more half-watching trailers for 45 minutes. Answer 10 quick questions
+          and get three strong Netflix picks that actually fit tonight’s vibe.
+        </p>
+      </section>
+
+      <section class="app-card">
+        <div class="progress-row">
+          <div>
+            <p class="progress-label">Question <span id="question-number">1</span> of 10</p>
+            <h2 id="question-text">Loading your first question…</h2>
+            <p id="question-subtext" class="question-subtext">
+              Pick the answer that feels most like tonight.
+            </p>
+          </div>
+          <div class="progress-meter" aria-hidden="true">
+            <span id="progress-fill"></span>
+          </div>
+        </div>
+
+        <div id="options" class="options" role="list"></div>
+
+        <div class="nav-row">
+          <button id="back-button" class="ghost-button" type="button">Back</button>
+          <button id="restart-button" class="ghost-button" type="button">Reset the vibe</button>
+        </div>
+      </section>
+
+      <section id="results" class="results hidden" aria-live="polite">
+        <div class="results-header">
+          <div>
+            <p class="eyebrow">Your top three</p>
+            <h2>Tonight’s best bets</h2>
+            <p class="results-intro">Three picks, zero doom-scrolling.</p>
+          </div>
+          <div class="results-actions">
+            <button id="reroll-button" class="ghost-button" type="button">
+              Give me 3 new options
+            </button>
+            <button id="results-restart-button" class="solid-button" type="button">
+              Spin again
+            </button>
+          </div>
+        </div>
+
+        <div id="answer-summary" class="answer-summary"></div>
+        <div id="recommendation-cards" class="recommendation-grid"></div>
+      </section>
+    </main>
+
+    <script src="./data/catalog.seed.js"></script>
+    <script src="./data/show-metadata.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
